@@ -59,51 +59,54 @@
 ---
 
 # **🏟️ 주요 역할 & 본인이 구현한 페이지**
+</br>
 - MVVM 아키텍처 적용 ,양방향 DataBinding을 사용하여 UI 업데이트와 사용자 입력 처리를 간편하게 만듬
+</br>
 - 역할 분담을 위해 여러개의 액티비티를 사용하지않고 4개의 fragnet를 함께 작업할 수 있도록 main구상(ViewPager2 적용),각 fragment와 title을 data class로 저장하여 갯수대로 정의해 화면에 꽂아줌으로써, 코드의 간소화와 가독성 향상
-- RecyclerView Adapter를 사용하던 중 데이터를 여러번 갱신해주는 코드에 불편함을 느껴 ListAdapter를 도입하여 코드 간소화, LiveData와 DiffUtil을 활용해 변경된 부분만 업데이트하고 쉽게 데이터를 관찰할 수 있도록 함.
-- UX 향상을 위해 Toolbar, Spinner, BottomSheetDialog 등과 같은 공통적으로 사용되는 요소들 분리해서 관리하여 일관성과 재사용성을 높임.
+</br>
+- RecyclerView Adapter를 사용하던 중 데이터를 여러번 갱신해주는 코드에 불편함을 느껴 ListAdapter를 도입하여 코드 간소화, LiveData와 DiffUtil을 활용해 변경된 부분만 업데이트하고 쉽게 데이터를 관찰할 수 있도록 함
+</br>
+- UX 향상을 위해 Toolbar, Spinner, BottomSheetDialog 등과 같은 공통적으로 사용되는 요소들 분리해서 관리하여 일관성과 재사용성을 높임
+</br>
 - 사용자 피드백을 반영하여 Filter 기능을 통해 사용자들이 쉽게 데이터를 필터링할 수 있도록 하였고 앱의 전반적인 UI를 관리하는 역할을 함 
+</br>
 - 각 Fragment간 UI와 데이터를 분리하기 위해 ViewModel과 SheardViewmodel을 사용해 데이터를 관리하였고, LiveData로 데이터를 관찰하여 데이터가 변경될때마다 UI를 업데이트할 수 있도록 관리해줌
+</br>
 - Figma를 사용해 디자이너와 협업 하여 앱의 전반적인 UX/UI 를 담당
+
 ---
 
 ### **1) mainPage**
 
-![home](https://github.com/matching-manager/matching-manager/assets/106515742/12d29e37-f76d-4624-a157-20c6f9f7c1d6)
+<img src="https://github.com/matching-manager/matching-manager/assets/106515742/12d29e37-f76d-4624-a157-20c6f9f7c1d6" style="zoom:50%;" />
 
 
 - **ViewPager2 x Tablayout** 으로 main화면 틀 구성
 - Fragment 간 **Toolbar**를 적용하여 리팩토링 함으로써 UI일관성과 유지보수성을 높임
-- 
-
+  
 ---
 
 ### **2) Arena**
 
-![arena1](https://github.com/matching-manager/matching-manager/assets/106515742/6ea0c30b-75ab-4f0e-820f-091088efe89c)
+<img src="https://github.com/matching-manager/matching-manager/assets/106515742/6ea0c30b-75ab-4f0e-820f-091088efe89c" style="zoom:50%;" />
 
 
-- **경기장 검색 필터기능**
-- 지역별로 필터를 적용하여 사용자가 더욱 쉽게 데이터를 필터링 할 수 있도록 함
-- app Toolbar 적용
+- **경기장 검색 필터기능**, 지역별로 필터를 적용하여 사용자가 더욱 쉽게 데이터를 필터링 할 수 있도록 함
 
 ---
 
 ### **3) Match**
 
-![match](https://github.com/matching-manager/matching-manager/assets/106515742/b10eb46a-a1e1-462d-9010-8bc3a02c10bb)
+<img src="https://github.com/matching-manager/matching-manager/assets/106515742/b10eb46a-a1e1-462d-9010-8bc3a02c10bb" style="zoom:50%;" />
 
 
-- **경기 매칭 필터**
-- 함께 경기할 상태팀을 구하기 위한 경기매칭 페이지 종목별, 지역별 필터를 적용
-- app Toolbar 적용
+- **경기 매칭 필터**, 함께 경기할 상태팀을 구하기 위한 경기매칭 페이지 종목별, 지역별 필터를 적용
 
 ---
 
 ### **4) Team**
 
-![team](https://github.com/matching-manager/matching-manager/assets/106515742/dcb35de0-de38-4f89-88d6-142ce6a30c05)
+<img src="https://github.com/matching-manager/matching-manager/assets/106515742/dcb35de0-de38-4f89-88d6-142ce6a30c05" style="zoom:50%;" />
 
 
 - **용병 모집/신청 필터 적용**
@@ -115,10 +118,11 @@
 
 ### **5) Detail/Add (MATCH/TEAM)**
 
-![detail](https://github.com/matching-manager/matching-manager/assets/106515742/a00528ae-cae7-4586-92af-631b01da2b79)
+<img src="https://github.com/matching-manager/matching-manager/assets/106515742/a00528ae-cae7-4586-92af-631b01da2b79" style="zoom:50%;" />
 
 
 - 게시글의 **상세정보**를 확인할 수 있는 디테일 페이지 구현
 - 게시글을 추가할 수 있는 Add Page 구현
 - 작성된 글의 내용이 각 페이지와 글 내용에 맞게 데이터를 관리할 수 있도록 sealed Class로 리팩토링하여 공통된 데이터를 함께 관리할 수 있도록함 ➡ 유지보수성 향상, 코드의 가독성, 안정성이 향상
+
 
