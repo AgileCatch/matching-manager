@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=cylinder&color=0:EAEDFE,100:D6FDE9&height=230&section=header&text=matching%20manager&fontColor=000000&fontSize=70&animation=fadeIn&fontAlignY=50&desc=MVVM%20Architecture&descAlignY=70)
 
-# Project 11조(LINK_UP) - MATCHING-MANAGER
+# LINK_UP - MATCHING-MANAGER
 
 ⚽️ **프로젝트 소개**
 
@@ -32,169 +32,93 @@
 
 </br>
 
-## ✈️ **기술 스택**
-<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=Kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=Android&logoColor=white"/>
-<img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=flat-square&logo=AndroidStudio&logoColor=white"/>
+## ⚙️ **내가 사용한 기술 스택**
+<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=Kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=flat-square&logo=AndroidStudio&logoColor=white"/>
 <img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=white">
+<img src="https://img.shields.io/badge/slack-4A154B?style=flat-square&logo=slack&logoColor=white">
+<img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white">
 
-</br>
+**Architecture** - MVVM (Model-View-ViewModel)
 
----
+**Jetpack** - ViewModel, SharedViewModel, LiveData, LifeCycle, ViewBinding, AAC
 
-# 🎲 MVVM - ARCHITECTURE
-
-<img width="365" alt="Architecture" src="https://github.com/matching-manager/matching-manager/assets/106515742/02b53cac-d8ec-4757-835d-bb14ca6367a1">
-
----
-
-# ⚙️ *Main Stacks*
-
-**Architecture** - DI, MVVM
-
-**Jetpack** - ViewModel, LiveData, Reposittory, LifeCycle, ViewBinding, DataBinding, AAC
-
-**비동기 처리** - Coroutine
-
-**데이터 처리** - Json Deserializer, SharedPreferences
-
-**Firebase** - Realtime DB, Storage, Authentication, Cloud Messaging
-
-**API 통신** - Retrofit, Kakao Search API
-
-**이미지 로더** - Coil
-
-**UI Frameworks** - Fragment, RecyclerViewAdapter, ListAdapter, XML, BottomsheetFragment, MaterialDesign
+**UI Frameworks** - Fragment, ViewPager2, ListAdapter, Bottom Sheet Dialog
 
 ---
 
-# **🏟️ *Features***
+## 🎲 **기간 및 기여도**
 
-### **1) Sign In + Sign Up**
+**기간** : 23.10.10 ~ 23.11.17 `6주`
 
-![sign](https://github.com/matching-manager/matching-manager/assets/106515742/e4dc350a-edbf-43b5-be9e-96f19b2e6b44)
+**참여 인원** : `4명`
 
-- **쉽고 빠른 로그인!**
-- **Google Signln + FireBase Auth**를 사용한 쉽고 간편한 로그인 기능 제공!
-- 앱 내에서 사용할 User, 이름, 번호를 입력해 회원가입 진행
+**기여도 : `40%`**
 
 ---
 
-### **2) home**
+# **🏟️ 주요 역할 & 본인이 구현한 페이지**
+- MVVM 아키텍처 적용 ,양방향 DataBinding을 사용하여 UI 업데이트와 사용자 입력 처리를 간편하게 만듬
+- 역할 분담을 위해 여러개의 액티비티를 사용하지않고 4개의 fragnet를 함께 작업할 수 있도록 main구상(ViewPager2 적용),각 fragment와 title을 data class로 저장하여 갯수대로 정의해 화면에 꽂아줌으로써, 코드의 간소화와 가독성 향상
+- RecyclerView Adapter를 사용하던 중 데이터를 여러번 갱신해주는 코드에 불편함을 느껴 ListAdapter를 도입하여 코드 간소화, LiveData와 DiffUtil을 활용해 변경된 부분만 업데이트하고 쉽게 데이터를 관찰할 수 있도록 함.
+- UX 향상을 위해 Toolbar, Spinner, BottomSheetDialog 등과 같은 공통적으로 사용되는 요소들 분리해서 관리하여 일관성과 재사용성을 높임.
+- 사용자 피드백을 반영하여 Filter 기능을 통해 사용자들이 쉽게 데이터를 필터링할 수 있도록 하였고 앱의 전반적인 UI를 관리하는 역할을 함 
+- 각 Fragment간 UI와 데이터를 분리하기 위해 ViewModel과 SheardViewmodel을 사용해 데이터를 관리하였고, LiveData로 데이터를 관찰하여 데이터가 변경될때마다 UI를 업데이트할 수 있도록 관리해줌
+- Figma를 사용해 디자이너와 협업 하여 앱의 전반적인 UX/UI 를 담당
+---
+
+### **1) mainPage**
 
 ![home](https://github.com/matching-manager/matching-manager/assets/106515742/12d29e37-f76d-4624-a157-20c6f9f7c1d6)
 
 
-- **추천매치, 공지사항 제공**
-- 앱의 메인 페이지로 공지사항 및 추천 경기 매칭을 제공하며상단의 버튼 클릭 시
-각각 Arena/Alarm 페이지로 연결
+- **ViewPager2 x Tablayout** 으로 main화면 틀 구성
+- Fragment 간 **Toolbar**를 적용하여 리팩토링 함으로써 UI일관성과 유지보수성을 높임
+- 
 
 ---
 
-### **3) Announcement**
-
-![announcement](https://github.com/matching-manager/matching-manager/assets/106515742/ece0f3f7-c677-4136-8155-3a88ffe33bb0)
-
-
-- **공지사항**
-- 앱 소개 및 안내사항을 보여주는 공지사항 페이지
-
----
-
-### **4) Arena**
+### **2) Arena**
 
 ![arena1](https://github.com/matching-manager/matching-manager/assets/106515742/6ea0c30b-75ab-4f0e-820f-091088efe89c)
 
 
-- **경기장 검색 & 공유 & 전화 기능**
-- KaKao 장소검색 API를 사용하여 종목별 경기장 정보를 지역별로 보여주고 Url공유, 전화기능을 제공합니다.
+- **경기장 검색 필터기능**
+- 지역별로 필터를 적용하여 사용자가 더욱 쉽게 데이터를 필터링 할 수 있도록 함
+- app Toolbar 적용
 
 ---
 
-### **5) Match**
+### **3) Match**
 
 ![match](https://github.com/matching-manager/matching-manager/assets/106515742/b10eb46a-a1e1-462d-9010-8bc3a02c10bb)
 
 
-- **쉽고 빠른 경기 매칭**
-- 함께 경기할 상태팀을 구하기 위한 경기매칭 페이지 종목별, 지역별 필터 사용 가능
+- **경기 매칭 필터**
+- 함께 경기할 상태팀을 구하기 위한 경기매칭 페이지 종목별, 지역별 필터를 적용
+- app Toolbar 적용
 
 ---
 
-### **6) Team**
+### **4) Team**
 
 ![team](https://github.com/matching-manager/matching-manager/assets/106515742/dcb35de0-de38-4f89-88d6-142ce6a30c05)
 
 
-- **용병 모집/신청**
-- 인원이 부족한 사람들을 위한 용병 모집/신청 기능 제공 모집/신청, 지역별 필터 사용 가능
+- **용병 모집/신청 필터 적용**
+- **경기 종목, 지역 필터 적용**
+- 중복된 코드의 Filter & Spinner를 Util로 분리 ➡ 중복된 코드를 제거하여 코드 400줄 감소, 일관성과 재사용성을 높임
+- 서로 다른 타입의 신청/모집의 데이터를 각각의 ListAdapter 로 한 화면에 출력하여 유지보수측면에서 복잡성증가, 이 문제를 해결하기 위해 ViewType을 나눠 하나의 ListAdapter로 관리할 수 있도록 EnumClass로 진입 타입을 분리하고 별도의 ViewHolder 로 데이터 구분 ➡ 재사용성, 가독성 ,유지보수성이 크게 향상
 
 ---
 
-### **7) Detail/Add (MATCH/TEAM)**
+### **5) Detail/Add (MATCH/TEAM)**
 
 ![detail](https://github.com/matching-manager/matching-manager/assets/106515742/a00528ae-cae7-4586-92af-631b01da2b79)
 
 
-- 게시글의 **상세정보**를 확인할 수 있는 디테일 페이지
+- 게시글의 **상세정보**를 확인할 수 있는 디테일 페이지 구현
 - 게시글을 추가할 수 있는 Add Page 구현
-- **관심 목록** 기능 & 매치/**팀 신청기능** 제공
-
----
-
-### **8) Calendar**
-
-![calendar](https://github.com/matching-manager/matching-manager/assets/106515742/81efd547-a361-4571-a48c-a3af38148da9)
-
-
-- **간편한 일정 관리**
-- **경기 날짜**, **장소**, 가벼운 **메모** 등 사용자가 손쉽게 이용할 수 있는 **일정관리** 기능 제공
-
----
-
-### **9) My**
-
-![my](https://github.com/matching-manager/matching-manager/assets/106515742/d1d1a8f2-fb6e-40ab-9ea9-34a946113836)
-
-
-- **USER PROFILE PAGE**
-- USER의 프로필 정보를 확인할 수 있는 페이지
-- **작성글**/**관심목록을** 한 눈에 확인할 수 있고버튼을 눌러 수정/삭제 가능
-- 추가적으로 로그아웃 기능을 제공
-
----
-
-### - **SEND MSG**
-
-![msg](https://github.com/matching-manager/matching-manager/assets/106515742/3e6b7d25-ad29-4564-ae77-6dab498d3f4f)
-
-
-- **Send Cloud Messaging** 을 사용
-- 각각 디테일 페이지에서
-용병/경기 매칭 신청을 지원하는 페이지신청 후 CloudMessage를 통해 데이터 전송
-
----
-
-### - **ALARM**
-
-![alam](https://github.com/matching-manager/matching-manager/assets/106515742/767bbd54-175e-4dde-a7e9-712c9bfa6d05)
-
-
-- 빠르고 정확한 알림
-- 용병 모집/신청, 경기 매칭 등 알림 서비스 제공 우측상단 Call 버튼으로 전화기능 제공
-
----
-
-# 👩🏻‍💻🧑🏻‍💻 ***Team members***
-
-<table>
-  <tbody>
-    <tr>
-      <td align="center"><a href="https://github.com/SoftyChoo"><img src="https://avatars.githubusercontent.com/u/132810978?v=4" width="100px;"><br /><sub><b>추민수</b></sub></a><br /></a></td>
-      <td align="center"><a href="https://github.com/AgileCatch"><img src="https://github.com/Android-Team-13-Maniacs/android_project_maniacs/assets/106515742/cbfc4f47-03c1-4983-8dfd-b1be424baab6" width="100px;"><br /><sub><b>김영현</b></sub></a><br /></a></td>
-      <td align="center"><a href="https://github.com/hjdevelop"><img src="https://avatars.githubusercontent.com/u/126463915?v=4" width="100px;"><br /><sub><b>손현준</b></sub></a><br /></a></td>
-      <td align="center"><a href="https://github.com/mwkimm"><img src="https://avatars.githubusercontent.com/u/94061061?v=4" width="100px;"><br /><sub><b>김민우</b></sub></a><br /></a></td>
-     <tr/>
-  </tbody>
-</table>
+- 작성된 글의 내용이 각 페이지와 글 내용에 맞게 데이터를 관리할 수 있도록 sealed Class로 리팩토링하여 공통된 데이터를 함께 관리할 수 있도록함 ➡ 유지보수성 향상, 코드의 가독성, 안정성이 향상
 
