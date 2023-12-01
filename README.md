@@ -66,13 +66,14 @@
 </br>
 - RecyclerView Adapter를 사용하던 중 데이터를 여러번 갱신해주는 코드에 불편함을 느껴 ListAdapter를 도입하여 코드 간소화, LiveData와 DiffUtil을 활용해 변경된 부분만 업데이트하고 쉽게 데이터를 관찰할 수 있도록 함
 </br>
-- UX 향상을 위해 Toolbar, Spinner, BottomSheetDialog 등과 같은 공통적으로 사용되는 요소들 분리해서 관리하여 일관성과 재사용성을 높임
+- UX 향상을 위해 Toolbar, Spinner, BottomSheetDialog 등과 같은 공통적으로 사용되는 요소들 분리, 관리하여 일관성과 재사용성을 높임
 </br>
-- 사용자 피드백을 반영하여 Filter 기능을 통해 사용자들이 쉽게 데이터를 필터링할 수 있도록 하였고 앱의 전반적인 UI를 관리하는 역할을 함 
+- 사용자 피드백을 반영하여 Filter 기능을 추가해 사용자들이 쉽게 데이터를 필터링할 수 있도록 하였음
 </br>
 - 각 Fragment간 UI와 데이터를 분리하기 위해 ViewModel과 SheardViewmodel을 사용해 데이터를 관리하였고, LiveData로 데이터를 관찰하여 데이터가 변경될때마다 UI를 업데이트할 수 있도록 관리해줌
 </br>
 - Figma를 사용해 디자이너와 협업 하여 앱의 전반적인 UX/UI 를 담당
+
 
 ---
 
