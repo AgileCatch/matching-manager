@@ -30,7 +30,17 @@
 
 ```
 
-</br>
+---
+
+## 🎲 **기간 및 기여도**
+
+**기간** : 23.10.10 ~ 23.11.17 `6주`
+
+**참여 인원** : `4명`
+
+**기여도 : `40%`**
+
+---
 
 ## ⚙️ **내가 사용한 기술 스택**
 <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=Kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=flat-square&logo=AndroidStudio&logoColor=white"/>
@@ -48,32 +58,21 @@
 
 ---
 
-## 🎲 **기간 및 기여도**
-
-**기간** : 23.10.10 ~ 23.11.17 `6주`
-
-**참여 인원** : `4명`
-
-**기여도 : `40%`**
-
----
-
 # **🏟️ 주요 역할 & 본인이 구현한 페이지**
-</br>
-- MVVM 아키텍처 적용 ,양방향 DataBinding을 사용하여 UI 업데이트와 사용자 입력 처리를 간편하게 만듬
-</br>
-- 역할 분담을 위해 여러개의 액티비티를 사용하지않고 4개의 fragnet를 함께 작업할 수 있도록 main구상(ViewPager2 적용),각 fragment와 title을 data class로 저장하여 갯수대로 정의해 화면에 꽂아줌으로써, 코드의 간소화와 가독성 향상
-</br>
-- RecyclerView Adapter를 사용하던 중 데이터를 여러번 갱신해주는 코드에 불편함을 느껴 ListAdapter를 도입하여 코드 간소화, LiveData와 DiffUtil을 활용해 변경된 부분만 업데이트하고 쉽게 데이터를 관찰할 수 있도록 함
-</br>
-- UX 향상을 위해 Toolbar, Spinner, BottomSheetDialog 등과 같은 공통적으로 사용되는 요소들 분리, 관리하여 일관성과 재사용성을 높임
-</br>
-- 사용자 피드백을 반영하여 Filter 기능을 추가해 사용자들이 쉽게 데이터를 필터링할 수 있도록 하였음
-</br>
-- 각 Fragment간 UI와 데이터를 분리하기 위해 ViewModel과 SheardViewmodel을 사용해 데이터를 관리하였고, LiveData로 데이터를 관찰하여 데이터가 변경될때마다 UI를 업데이트할 수 있도록 관리해줌
-</br>
-- Figma를 사용해 디자이너와 협업 하여 앱의 전반적인 UX/UI 를 담당
-
+- **MVVM 아키텍처 적용**
+    - 양방향 `DataBinding`을 사용하여 UI 업데이트와 사용자 입력 처리를 간편하게 만듬
+- **ViewPager2 를 적용**하여, 4개의 fragnet를 함께 작업할 수 있도록 main구상
+    - 각 fragment와 title을 data class로 저장하여 분리해줌
+    - 코드의 간소화와 가독성 향상
+- **ListAdapter를 도입**하여 코드 간소화
+    - RecyclerView Adapter를 사용하던 중 데이터를 여러번 갱신해주는 코드에 불편함을 해소
+    - LiveData와 DiffUtil을 활용해 변경된 부분만 업데이트하고 쉽게 데이터를 관찰할 수 있도록 함
+- **UX 향상**을 위해 Toolbar, Spinner, BottomSheetDialog 등과 같은 공통적으로 사용되는 요소들 분리, 관리하여 일관성과 재사용성을 높임
+- **사용자 피드백을 반영**하여 Filter 기능을 추가해 사용자들이 쉽게 데이터를 필터링할 수 있도록 함
+- **ViewModel과 SheardViewmodel**을 사용해 데이터를 관리
+    - 각 Fragment간 UI와 데이터를 분리하기 위해 활용
+    - LiveData로 데이터를 관찰하여 데이터가 변경될때마다 UI를 업데이트할 수 있도록 관리
+- Figma를 사용해 **디자이너와 협업** 하여 앱의 전반적인 UX/UI 를 담당
 
 ---
 
