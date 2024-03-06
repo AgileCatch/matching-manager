@@ -120,7 +120,6 @@
     
     [💡 [Devlog] EnumClass로 타입을 분리하여 프래그먼트간 데이터 전달하기](https://agilecatch.github.io/devlog/fixit/2023-10-18-%ED%94%84%EB%9E%98%EA%B7%B8%EB%A8%BC%ED%8A%B8%EA%B0%84-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%EC%86%A1/)
     
-
 ---
 
 ### Filter & Spinner를 Util로 분리하여 코드 재사용성 증가
