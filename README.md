@@ -127,7 +127,7 @@
 - **기존 :** 여러종류의 `Spinner` 를 5개의 화면에서 똑같이 사용하다보니 **중복된 코드**로 인한 유지보수성이 떨어짐 을 느끼게됨
 
 - **Util로 분리 후**  **Spinners Util**로 분리하여 **중복된 코드를 제거**하고 코드 **재사용성을 높임**
-    - **code line 400줄 감소**, 유지보수성이 향상됨
+    - 중복된 코드라인이 삭제되어 유지보수성이 향상됨
     - Util을 사용하여 스피너의 공통적인 기능을 구현함으로써, 코드의 **가독성**과 **일관성**이 향상됨
     [](https://agilecatch.github.io/devlog/kotlin/2023-10-14-Spinner%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/)[💡[Devlog] 필터 적용후 리사이클러뷰 생성시 중간부터 생기는 문제 해결 방법](https://agilecatch.github.io/devlog/fixit/2023-11-03-%EB%A6%AC%EC%82%AC%EC%9D%B4%ED%81%B4%EB%9F%AC%EB%B7%B0-%EC%9E%90%EB%8F%99%EC%8A%A4%ED%81%AC%EB%A1%A4/)
 
