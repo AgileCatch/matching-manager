@@ -50,7 +50,7 @@
 
 **Jetpack** - ViewModel, SharedViewModel, LiveData, LifeCycle, ViewBinding, AAC
 
-**UI Frameworks** - Fragment, ViewPager2, ListAdapter, Bottom Sheet Dialog
+**UI Frameworks** - Fragment, ViewPager2, TabLayout, ListAdapter, Bottom Sheet Dialog, RecyclerView, setFragmentResultListener
 
 ---
 
